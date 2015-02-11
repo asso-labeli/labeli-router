@@ -5,6 +5,7 @@
   "main": "router.js",
   "dependencies": {
     "express": "^4.11.2",
+    "gith": "^1.0.4",
     "vhost": "^3.0.0"
   },
   "devDependencies": {},
