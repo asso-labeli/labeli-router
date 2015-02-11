@@ -1,0 +1,24 @@
+{
+  "name": "labeli-router",
+  "version": "0.0.0",
+  "description": "Router for the Label[i] Web platform",
+  "main": "router.js",
+  "dependencies": {
+    "express": "^4.11.2",
+    "vhost": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://eolhing@github.com/eolhing/labeli-router.git"
+  },
+  "author": "Alix Fumoleau <alix.fumoleau@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eolhing/labeli-router/issues"
+  },
+  "homepage": "https://github.com/eolhing/labeli-router"
+}
