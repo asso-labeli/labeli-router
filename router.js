@@ -8,7 +8,7 @@ var routes = {
         'hook.labeli.org' : 'http://localhost:9000',
         // Api
         'api.labeli.org' : 'http://localhost:9010',
-        'hook.labeli.org' : 'http://localhost:9011',
+        'hook.api.labeli.org' : 'http://localhost:9011',
         // Website
         'next.labeli.org' : 'http://localhost:9020',
         'hook.next.labeli.org' : 'http://localhost:9021',
