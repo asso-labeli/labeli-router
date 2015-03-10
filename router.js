@@ -39,12 +39,11 @@ catch(e)
 try
 {
     app.use(vhost('hook.labeli.org',		require('./hook.js')));
-    
-    catch(e)
-    {
-        console.log("Router hook couldn't be started");
-        console.log(e);
-    }
+}
+catch(e)
+{
+    console.log("Router hook couldn't be started");
+    console.log(e);
 }
 
 app.listen(80);
