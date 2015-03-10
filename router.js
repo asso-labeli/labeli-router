@@ -1,49 +1,22 @@
-var express = require('express');
-var vhost = require('vhost');
+var httpProxy = require('http-proxy');
+var http = require('http');
 
-var app = express();
+var proxy = httpProxy.createProxy();
 
-// Website
-try
-{
-    var website = require('../website/server.js');
-    if(website != null)
-    {
-        app.use(vhost('next.labeli.org',		website));
-        app.use(vhost('*.website.labeli.org',   website));
-    }
-}
-catch(e)
-{
-    console.log("Website couldn't be started");
-    console.log(e);
-}
+var routes = {
+        // Router
+        'hook.labeli.org' : 'http://localhost:9000',
+        // Api
+        'api.labeli.org' : 'http://localhost:9010',
+        'hook.labeli.org' : 'http://localhost:9011',
+        // Website
+        'next.labeli.org' : 'http://localhost:9020',
+        'hook.next.labeli.org' : 'http://localhost:9021',
+};
 
-// Api
-try
+var router = http.createServer(function(req, res)
 {
-    var api = require('../api/api.js');
-    if(api != null)
-    {
-        app.use(vhost('api.labeli.org',		api));
-        app.use(vhost('*.api.labeli.org',   api));
-    }
-}
-catch(e)
-{
-    console.log("Api couldn't be started");
-    console.log(e);
-}
+    proxy.web(req, res, {target : routes[req.headers.host]});
+});
 
-// Router
-try
-{
-    app.use(vhost('hook.labeli.org',		require('./hook.js')));
-}
-catch(e)
-{
-    console.log("Router hook couldn't be started");
-    console.log(e);
-}
-
-app.listen(80);
+router.listen(80);

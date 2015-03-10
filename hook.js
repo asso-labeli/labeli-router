@@ -1,11 +1,11 @@
-var hook = require('gith').create();
+var hook = require('gith').create(9000);
 
 var execFile = require('child_process').execFile;
 
-hook({repo: 'eolhing/labeli-router'}).on('all', function(payload)
+hook({repo: 'asso-labeli/labeli-router'}).on('all', function(payload)
 {
     if(payload.branch === 'master')
         execFile('./hook.sh');
 });
 
-module.exports = hook;
+hook;

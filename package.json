@@ -4,9 +4,8 @@
   "description": "Router for the Label[i] Web platform",
   "main": "router.js",
   "dependencies": {
-    "express": "^4.11.2",
     "gith": "^1.0.4",
-    "vhost": "^3.0.0"
+    "http-proxy": "^1.8.1"
   },
   "devDependencies": {},
   "scripts": {
